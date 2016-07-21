@@ -24,6 +24,10 @@ docker ps
 docker rm -v (docker ps -a -q -f status=exited)
 docker rm $(docker ps -a -q)
 ```
+- remove untagged images
+```
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+```
 
 ### Run
 
