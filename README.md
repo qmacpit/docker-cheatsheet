@@ -19,6 +19,12 @@ docker images
 docker ps
 ```
 
+- remove containers
+```
+docker rm -v (docker ps -a -q -f status=exited)
+docker rm $(docker ps -a -q)
+```
+
 ### Run
 
 - running container with the image
@@ -29,5 +35,7 @@ docker run -p 80:80 <image_name>
 ```
 docker exec -i -t <container_id> /bin/bash
 ```
-
-- 
+- mount folder
+```
+docker run -v <host_dir>:<container_dir>
+```
