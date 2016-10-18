@@ -37,7 +37,7 @@ docker run -p 80:80 <image_name>
 ```
 - attach bash
 ```
-docker exec -i -t <container_id> /bin/bash
+docker exec -i -t <container_id / image_name > /bin/bash
 ```
 - mount folder
 ```
