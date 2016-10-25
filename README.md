@@ -31,9 +31,13 @@ docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
 
 ### Run
 
-- running container with the image
+- running container with the image in background in interactive mode
 ```
 docker run -p 80:80 <image_name>
+```
+- running container with image - de 
+```
+docker run -id <image_name>
 ```
 - attach bash
 ```
