@@ -21,12 +21,18 @@ docker ps
 
 - remove containers
 ```
-docker rm -v (docker ps -a -q -f status=exited)
+docker rm -v $(docker ps -a -q -f status=exited)
 docker rm $(docker ps -a -q)
 ```
 - remove untagged images
 ```
 docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+docker rmi $(docker images -f "dangling=true" -q)
+```
+
+- clear volume
+```
+docker volume rm $(docker volume ls -qf dangling=true)
 ```
 
 ### Run
